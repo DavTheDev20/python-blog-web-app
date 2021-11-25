@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block post_title %}Create{% endblock %}
+
+{% block content %}
+<form class="ms-5">
+    <div class="mb-3 form-floating">
+        <input class="form-control w-25" type="text" id="postTitle" placeholder="Title"/>
+        <label for="postTitle">Title</label>
+    </div>
+    <div class="form-floating ">
+        <textarea class="form-control w-25" placeholder="Enter text here..." id="postContent" style="height: 250px"></textarea>
+        <label for="postContent">Enter post content...</label>
+    </div>
+    <button class="btn btn-primary mt-3">Post</button>
+
+</form>
+{% endblock %}
