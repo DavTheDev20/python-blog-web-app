@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block post_title %}Edit Post{% endblock %} {% block
+content %}
+<form
+  class="ms-5"
+  action="{{url_for('edit', id=post._id, method='PUT')}}"
+  method="PUT"
+>
+  <div class="mb-3 form-floating">
+    <input
+      class="form-control w-25"
+      type="text"
+      id="postTitle"
+      placeholder="Title"
+      name="title"
+      value="{{post.title}}"
+    />
+    <label for="postTitle">Title</label>
+  </div>
+  <div class="form-floating">
+    <textarea class="form-control w-25" name="content" style="height: 250px">
+{{post.content}}</textarea
+    >
+    <!-- <label for="postContent">Enter post content...</label> -->
+  </div>
+  <button class="btn btn-primary mt-3">Edit</button>
+</form>
+{% endblock %}

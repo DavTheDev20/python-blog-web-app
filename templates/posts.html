@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block post_title %}Posts{% endblock %} {% block
+content %}
+<div class="container">
+  {% for post in posts: %}
+  <div class="post w-50 mb-4 border-bottom">
+    <h2>{{post.title}}</h2>
+    <p>{{post.content[:25]}}... <a href="/posts/{{post._id}}">Read More</a></p>
+    <small style="font-size: 0.8rem; font-weight: 600"
+      >Posted On: {{post.dateCreated.strftime("%m-%d-%Y")}}</small
+    >
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

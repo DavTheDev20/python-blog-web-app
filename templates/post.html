@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block post_title %}{{post.title}}{% endblock %} {%
+block content %}
+<div class="container">
+  <p>{{post.content}}</p>
+  <small style="font-size: 0.85rem; font-weight: 600"
+    >Posted On: {{post.dateCreated.strftime("%m-%d-%Y")}}</small
+  >
+  <button
+    class="btn btn-secondary btn-sm d-block mt-3"
+    style="width: 10%"
+    href="/edit/{{post._id}}"
+    disabled
+  >
+    Edit Post
+  </button>
+</div>
+{% endblock %}
