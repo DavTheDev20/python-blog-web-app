@@ -1,12 +1,8 @@
-{% extends 'base.html' %}
-
-{% block post_title %}Welcome to the Python Blog App!{% endblock %}
-{% block button %}
-<a class="btn btn-primary" href="{{url_for('create')}}">Create Post</a>
-{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% block post_title %}Welcome to the Python Blog
+App!{% endblock %} {% block button %}
+<a class="btn btn-primary mt-3" href="{{url_for('create')}}">Create Post</a>
+{% endblock %} {% block content %}
 <div class="container">
-    <h2>Feel free to post what ever is on your mind.</h2>
+  <h2>Feel free to post what ever is on your mind.</h2>
 </div>
 {% endblock %}

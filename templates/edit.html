@@ -1,10 +1,6 @@
 {% extends 'base.html' %} {% block post_title %}Edit Post{% endblock %} {% block
 content %}
-<form
-  class="ms-5"
-  action="{{url_for('edit', id=post._id, method='PUT')}}"
-  method="PUT"
->
+<form class="ms-5" action="{{url_for('edit', id=post._id)}}" method="POST">
   <div class="mb-3 form-floating">
     <input
       class="form-control w-25"

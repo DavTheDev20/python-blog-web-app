@@ -5,13 +5,25 @@ block content %}
   <small style="font-size: 0.85rem; font-weight: 600"
     >Posted On: {{post.dateCreated.strftime("%m-%d-%Y")}}</small
   >
-  <button
-    class="btn btn-secondary btn-sm d-block mt-3"
+  {% if post.dateUpdated: %}
+  <small style="font-size: 0.8rem; display: block">
+    Updated On: {{post.dateUpdated.strftime("%m-%d-%Y")}}
+  </small>
+  {% endif %}
+  <a
+    class="btn btn-primary btn-sm d-block mt-3"
     style="width: 10%"
     href="/edit/{{post._id}}"
-    disabled
   >
     Edit Post
-  </button>
+  </a>
+  <form method="POST" action="{{url_for('post_page', id=post._id)}}">
+    <input
+      value="Delete"
+      type="submit"
+      class="btn btn-danger btn-sm mt-2"
+      style="width: 10%"
+    />
+  </form>
 </div>
 {% endblock %}
